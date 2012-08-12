@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+	
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="2dp"
+		android:padding="2dp"
+		android:orientation="horizontal">
+		
+		<Button android:id="@+id/asyncButton"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="@string/async"
+			android:gravity="center" />
+		
+		<Button android:id="@+id/syncButton" 
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="@string/sync"
+			android:gravity="center" />
+		
+		<Button android:id="@+id/clearButton"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="@string/clear"
+			android:gravity="center" />
+		
+		
+	</LinearLayout>
+
+	<ScrollView 
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+		
+		<TextView android:id="@+id/logTextView"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/black" />	
+		
+	</ScrollView>
+	
+	
+
+</LinearLayout>
