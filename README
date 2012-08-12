@@ -1,2 +1,33 @@
 Android-HttpRequest
+===================
 
+What is it ?
+
+It's a simple library for synchronous and asynchronous http request on Android.
+
+How to use :
+
+You need these classes : AHttpRequest.java and OnAHttpRequestListener.java
+all located at com/ludriv/ahttprequest/libs
+
+In your Android project, make sure you have allowed these permissions in your Manifest.xml file :
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+To make a http request, you must instanciate the AHttpRequest class and configure some stuffs like URL, post parameters...
+AHttpRequest req = new AHttpRequest(this)); // this = Activity
+req.setUrl("http://www.your_url.com/path/file.extension");
+req.isAsynchronous(true); // set asynchronous
+req.isDisplayLoader(true); // display loader popup while executing the request
+req.setLoadingText("My custom loading text"); // you can edit loading text, by default it's "Loading"
+req.setOnHttpRequestListener(this); // Activity handles 2 methods : onAHttpRequestSuccess and onAHttpRequestFail
+
+// then
+req.start();
+
+// if request finishes successfully, you can handle response data in onAHttpRequestSuccess
+// otherwise, if request fails, I return you the instance of AHttpRequest and the status code (eg. 404)
+
+
+For more information about implementation, look TestActivity.java
